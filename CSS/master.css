@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Light-grey); 
+}
+:root {
+  --Purple: hsl(259, 100%, 65%);
+  --Light-red: hsl(0, 100%, 67%);
+
+  /* ### Neutral */
+
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
+}
+.container {
+  width: 700px;
+  height: 500px;
+  padding: 60px;
+  border-radius: 10px 10px 80px 10px;
+  background-color: var(--White);
+  -webkit-border-radius: 15px 15px 200px 15px;
+  -moz-border-radius: 10px 10px 80px 10px;
+  -ms-border-radius: 10px 10px 80px 10px;
+  -o-border-radius: 10px 10px 80px 10px;
+}
+.container .date {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.container .date > div {
+  position: relative;
+}
+.container .date > div::before {
+  position: absolute;
+  color: var(--Smokey-grey);
+  left: 0;
+  top: -30px;
+}
+.container .date > .day::before {
+  content: "Day";
+}
+.container .date > .month::before {
+  content: "Month";
+}
+.container .date > .year::before {
+  content: "Year";
+}
+.container .date input {
+  width: 120px;
+  height: 40px;
+  padding-left: 10px;
+  font-weight: 800;
+  font-size: 20px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border: 1px solid #00000049;
+  outline: none;
+}
+.container .date input:focus {
+  border: 2px solid var(--Purple);
+  caret-color: var(--Purple);
+}
+.arrow {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+.arrow::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: var(--Off-black);
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  opacity: 0.4;
+}
+.arrow img {
+  padding: 10px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-color: var(--Off-black);
+  cursor: pointer;
+  z-index: 4;
+}
+.result{
+  font-size: 55px;
+  margin-top: 30px;
+}
+span{
+  color: var(--Purple);
+}
+
+/* from js */
+.wrong,.empty{
+  display: none;
+  font-size: 10px;
+  margin-bottom: -35px;
+  padding: 5px 0;
+  color: var(--Light-red);
+  font-weight: 400;
+}
+@media (max-width: 768px) {
+  .container {
+    width: 85%;
+    padding: 40px;
+  }
+  .container .date{
+    gap: 5px;
+    width: 100%;
+    
+  }
+  .container .date > div{
+    width: 33%;
+  }
+  .arrow{
+    justify-content: center;
+  }
+  .container .date input{
+    width: 100%;
+  }
+  .result{
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 400px){
+  .result{
+    font-size: 30px;
+  }
+}
